@@ -378,7 +378,7 @@ where
     type Item = Result<PeerMessage, io::Error>;
 
     fn poll_next(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {
-        let mut s = self.get_mut();
+        let s = self.get_mut();
 
         if s.disconnected {
             return Poll::Ready(None);

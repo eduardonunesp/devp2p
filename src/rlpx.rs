@@ -52,6 +52,7 @@ struct DisconnectSignal {
 }
 
 #[derive(Debug)]
+#[allow(dead_code)]
 struct ConnectedPeerState {
     tasks: TaskGroup,
 }
@@ -430,6 +431,7 @@ async fn handle_incoming_request<C, Io>(
 }
 
 #[derive(Debug, Default)]
+#[allow(dead_code)]
 struct CapabilitySet {
     inner: BTreeMap<CapabilityId, CapabilityLength>,
 
